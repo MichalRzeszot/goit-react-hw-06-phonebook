@@ -12,12 +12,11 @@ const ContactList = () => {
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
 
-  console.log(visibleContacts);
-
   return (
     <ul className={styles.contactList}>
       {visibleContacts.map(({ id, name, number }) => (
         <li key={id}>
+          {' '}
           {name}: {number}
           <button onClick={() => dispatch(deleteContact(id))}>Delete</button>
         </li>
